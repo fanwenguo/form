@@ -57,7 +57,11 @@
         submit(){
             let {name,pwd,age,email}=this.formData
             if(name&&pwd&&age&&email){
-                    console.log('登录成功')
+                if(this.rules.name.reg.test(name)&&this.rules.pwd.reg.test(pwd)&&this.rules.age.reg.test(age)&&this.rules.email.reg.test(email)){
+                   alert('登录成功')
+                }else{
+                    alert('请重新填写')
+                }
             }else{
                 alert(1)
             }
